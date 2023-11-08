@@ -268,6 +268,12 @@ local function get_default_strategy_config(strategy, command, cwd)
         runtimeExecutable = command[1],
         console = "integratedTerminal",
         sourceMaps = true,
+        pauseForSourceMap = true,
+        resolveSourceMapLocations = {
+          "${workspaceFolder}/**",
+          "!**/node_modules/**",
+        },
+
         internalConsoleOptions = "neverOpen",
         rootPath = "${workspaceFolder}",
         cwd = cwd or "${workspaceFolder}",
